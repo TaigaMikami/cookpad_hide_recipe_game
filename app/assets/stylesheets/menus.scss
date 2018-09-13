@@ -4,12 +4,88 @@ $secondary-color: color("cyan", "base") !default;
 @import 'materialize';
 @import 'material_icons';
 
-
+// 共通
 .main-button {
   color: white !important;
   background-color: #ff5252;
 }
 
+
+//食品選択ページ
+.food-select-content {
+  background: image-url('back.png');
+  background-size: contain;
+  background-repeat: repeat;
+  padding-bottom: 20px;
+}
+
+.image-content {
+  position: relative;
+}
+
+.image-btn-group {
+  position: absolute;
+  left: 9px;
+  bottom: 11px;
+
+  .image-btn {
+    font-size: 18px !important;
+    padding: 0 1em !important;
+  }
+
+  .ano-image-btn{
+    background-color: #CBCBCB;
+    color: #606060 !important;
+    font-size: 14px !important;
+  }
+}
+
+.select-content {
+  margin: 13px;
+  color: #864026 !important;
+  .title {
+    font-size: 30px;
+    line-height: 110%;
+    margin: 1.14rem 0 0.912rem 0;
+    font-weight: bold;
+  }
+  p {
+    font-weight: bold;
+  }
+
+  .content-name {
+    font-size: 17px;
+    margin: 30px 0px 0px 0px;
+  }
+  .tool-badge {
+    border: 1.5px solid #606060;
+    border-radius: 20px;
+    padding: 3px 15px;
+    background-color: white;
+  }
+  .person-count {
+    font-size: 13px;
+  }
+  .collection {
+    border: none;
+    .collection-item {
+      position: relative;
+      padding: 5px 20px;
+    }
+    .quantity {
+      position: absolute;
+      right: 13px;
+    }
+  }
+}
+
+
+// 食材購入促す画面
+.preperation-content {
+  background: image-url('back.png');
+  background-size: contain;
+  background-repeat: repeat;
+}
 li {
   input[type="checkbox"] {
     opacity: 1 !important;

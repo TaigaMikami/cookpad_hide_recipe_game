@@ -6,11 +6,9 @@ class MenusController < ApplicationController
   end
 
   def material_preperation
-
   end
 
   def cooking
-
   end
 
   def success
@@ -18,11 +16,9 @@ class MenusController < ApplicationController
   end
 
   def time_up
-
   end
 
   def failure
-
   end
 
   # GET /menus
@@ -93,6 +89,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:title, :recipe, :cooking_time, :image_url, :taste, :hint1, :hint2, :hint3)
+      params.require(:menu).permit(:title, :recipe, :cooking_time, :image_url, :taste, :hint1, :hint2, :hint3, :person_count)
     end
 end

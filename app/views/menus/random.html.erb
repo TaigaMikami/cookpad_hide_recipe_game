@@ -1,39 +1,49 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
+<div class="food-select-content">
+  <div class="image-content">
+    <%= image_tag @menu.image_url, size: '375x375' %>
 
-<%= image_tag @menu.image_url, size: '348x348' %>
+    <!--TODO ボタンのアイコン変える リンク先-->
+    <div class="image-btn-group">
+      <%= link_to material_preparation_path(@menu), class: 'waves-effect waves-light main-button btn-large image-btn' do %>
+        <i class="material-icons left">check</i>この料理に決定
+      <% end %>
+      <a class="waves-effect waves-light main-button btn-large ano-image-btn"><i class="material-icons left">cached</i>別の料理</a>
+    </div>
+  </div>
+  <div class="select-content">
+    <h4 class="title">
+      <%= @menu.title %>
+    </h4>
 
-<!--TODO ボタンのアイコン変える リンク先-->
-<%= link_to material_preparation_path(@menu), class: 'waves-effect waves-light btn main-button' do %>
-  <i class="material-icons left">check</i>この料理に決定
-<% end %>
-<a class="waves-effect waves-light btn main-button"><i class="material-icons left">cached</i>別の料理</a>
+    <p>
+      <strong>調理時間:</strong>
+      <%= @menu.cooking_time %> 分
+    </p>
 
-<h4>
-  <%= @menu.title %>
-</h4>
+    <p>
+    <h5 class="content-name">調理器具</h5>
+    <hr>
+    <% @menu.tools.each do |tool|  %>
+      <span class="tool-badge"><%= tool.name %></span>
+    <% end %>
+    </p>
 
-<p>
-  <strong>調理時間:</strong>
-  <%= @menu.cooking_time %>
-</p>
+    <h5 class="content-name">食材 <span class="person-count"><%= @menu.person_count %>人前</span></h5>
+    <hr>
+    <ul class="collection">
+      <% @menu.materials.each do |material| %>
+        <li class="collection-item">
+          <span class="material"><%= material.name %></span>
+          <span class="quantity"><%= material.quantity %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<p>
-  <strong>調理器具:</strong>
-  <% @menu.tools.each do |tool|  %>
-    <%= tool.name %>
-  <% end %>
-</p>
-
-<strong>食材:</strong>
-<ul class="collection">
-  <% @menu.materials.each do |material| %>
-    <li class="collection-item"><%= material.name %><%= material.quantity %></li>
-  <% end %>
-</ul>
-
-
-<%= link_to 'Edit', edit_menu_path(@menu) %> |
-<%= link_to 'Back', menus_path %>
+<!--<%#= link_to 'Edit', edit_menu_path(@menu) %> |-->
+<%#= link_to 'Back', menus_path %>
 
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {

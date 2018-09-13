@@ -1,23 +1,26 @@
-<h3>準備にとりかかったください！</h3>
-<p>・まずはスーパーで、食材を調達しましょう！
-<p>・食材をカゴに入れたら「食材メモ」にチェックをつけましょう。</p>
-<p>・すべての食材を揃えたら、調理を開始しましょう。</p>
+<div class="preperation-content">
+  <h3>準備に</h3>
+  <h3>とりかかったください！</h3>
+  <p>・まずはスーパーで、食材を調達しましょう！
+  <p>・食材をカゴに入れたら「食材メモ」にチェックをつけましょう。</p>
+  <p>・すべての食材を揃えたら、調理を開始しましょう。</p>
 
-<h3><%= @menu.title %></h3>
-<p><%= @menu.cooking_time %>分</p>
+  <h3><%= @menu.title %></h3>
+  <p><%= @menu.cooking_time %>分</p>
 
-<strong>食材:</strong>
+  <strong>食材:</strong>
 
-<form action="cgi-bin/abc.cgi" method="post">
-<ul class="collection">
-  <% @menu.materials.each do |material| %>
-    <li class="collection-item">
-      <label><input type="checkbox" /> <%= material.name %><%= material.quantity %></label>
-    </li>
+  <form action="cgi-bin/abc.cgi" method="post">
+    <ul class="collection">
+      <% @menu.materials.each do |material| %>
+        <li class="collection-item">
+          <label><input type="checkbox" /> <%= material.name %><%= material.quantity %></label>
+        </li>
+      <% end %>
+    </ul>
+  </form>
+
+  <%= link_to cooking_path(@menu), class: 'waves-effect waves-light btn main-button' do %>
+    <i class="material-icons left">cloud</i>クッキングスタート
   <% end %>
-</ul>
-</form>
-
-<%= link_to cooking_path(@menu), class: 'waves-effect waves-light btn main-button' do %>
-  <i class="material-icons left">cloud</i>クッキングスタート
-<% end %>
+</div>
