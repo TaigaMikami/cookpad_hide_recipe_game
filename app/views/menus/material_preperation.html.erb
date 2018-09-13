@@ -47,9 +47,11 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
+    var clickCount = 0;
+
     // 画面繊維した時点で始まる
     $(document).ready(function(){
-        localStorage.removeItem("countTimer")
+        localStorage.removeItem("countTimer");
         $('.modal').modal();
     });
 </script>

@@ -155,3 +155,75 @@ li {
     pointer-events: all !important;
   }
 }
+
+// 調理中の画面
+.cooking-content {
+  color: #864026 !important;
+  background: image-url('back.png');
+  background-size: contain;
+  background-repeat: repeat;
+  padding: 10px 0 53px 0;
+  text-align: center;
+  h4 {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  h1 {
+    font-size: 80px;
+    margin-top: 0;
+  }
+  .cooking-image {
+    position: relative;
+  }
+  .top-btn {
+    width: 185px;
+    color: #ff5252;
+    background-color: white;
+    padding: 0 20px;
+    .left {
+      margin-right: 0;
+    }
+  }
+  .top-btn-under-line {
+    border-bottom: 4px solid #ff5252;
+  }
+  .image-btn {
+    width: 360px;
+    position: absolute;
+    left: 8px;
+    bottom: 11px;
+  }
+  .modal {
+    color: white;
+    margin-top: 131px;
+    width: 375px;
+    height: 375px;
+    opacity: 0.8 !important;
+    background-color: black;
+    .collection {
+      color: black;
+    }
+    .cancel {
+      margin-top: 5px;
+      margin-left: 280px;
+      color: #ff5252;
+      font-size: 30px;
+    }
+    .modal-content{
+      margin-top: 5px;
+      padding: 10px;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  .give-up {
+    margin-top: 20px;
+  }
+  .give {
+    color: #864026;
+    text-decoration: underline;
+  }
+}
+
+

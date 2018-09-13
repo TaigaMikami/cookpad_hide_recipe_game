@@ -1,41 +1,72 @@
-<p>TIME</p>
+<div class="cooking-content">
+  <h4>TIME</h4>
 
-<h1><span id="min"></span>:<span id="sec"></span></h1>
+  <h1><span id="min"></span>:<span id="sec"></span></h1>
 
-
-<%= image_tag @menu.image_url, size: '348x348' %>
-
-<!--ここはモーダルで表示-->
-<a class="waves-effect waves-light btn modal-trigger main-button" href="#modal1">ヒント</a>
-<a class="waves-effect waves-light btn modal-trigger" href="#modal2">詳細</a>
-<a href="">ギブアップ</a>
-
-<!--モーダル-->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>ヒント1</h4>
-    <p><%= @menu.hint1 %></p>
-    <h4>ヒント2</h4>
-    <p><%= @menu.hint2 %></p>
-    <h4>ヒント3</h4>
-    <p><%= @menu.hint3 %></p>
+  <a id="hint-button" class="waves-effect waves-light btn modal-trigger top-btn" href="#modal1" onclick="hintCount()">
+    <i class="material-icons left">live_help</i>ヒント あと<span id="hint">3</span>回</a>
+  <a id="detail-button" class="waves-effect waves-light btn modal-trigger top-btn" href="#modal2" onclick="detailCount()">
+    <i class="material-icons left">list</i>詳細</a>
+  <div class="cooking-image">
+    <%= image_tag @menu.image_url, size: '375x375' %>
+    <%= link_to material_preparation_path(@menu), class: 'waves-effect waves-light main-button btn image-btn' do %>
+      <i class="material-icons left">local_dining</i>完成<i class="material-icons right">local_dining</i>
+    <% end %>
   </div>
-  <div class="modal-footer">
-    <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  <!--ここはモーダルで表示-->
+  <div class="give-up">
+    <a class="modal-trigger give" href="#modal3">ギブアップ</a>
   </div>
-</div>
+  <!--モーダル-->
+  <div id="modal1" class="modal">
+    <a href="#" class="modal-close waves-effect waves-green btn-flat">
+      <i class="material-icons cancel">cancel</i>
+    </a>
+    <div class="modal-content">
+      <div id="hint1">
+        <h4>ヒント1</h4>
+        <p><%= @menu.hint1 %></p>
+      </div>
+      <div id="hint2" class="hidden">
+        <h4>ヒント2</h4>
+        <p><%= @menu.hint2 %></p>
+      </div>
+      <div id="hint3" class="hidden">
+        <h4>ヒント3</h4>
+        <p><%= @menu.hint3 %></p>
+      </div>
+    </div>
+<!--    <div class="modal-footer">-->
+<!--      <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>-->
+<!--    </div>-->
+  </div>
 
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <strong>食材:</strong>
-    <ul class="collection">
-      <% @menu.materials.each do |material| %>
-        <li class="collection-item"><%= material.name %><%= material.quantity %></li>
-      <% end %>
-    </ul>
+  <div id="modal2" class="modal">
+    <a href="#" class="modal-close waves-effect waves-green btn-flat">
+      <i class="material-icons cancel">cancel</i>
+    </a>
+    <div class="modal-content">
+      <strong>食材:</strong>
+      <ul class="collection">
+        <% @menu.materials.each do |material| %>
+          <li class="collection-item"><%= material.name %><%= material.quantity %></li>
+        <% end %>
+      </ul>
+    </div>
+
+<!--    <div class="modal-footer">-->
+<!--      <a href="" class="modal-close waves-effect waves-green btn-flat">Agree</a>-->
+<!--    </div>-->
   </div>
-  <div class="modal-footer">
-    <a href="" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+
+  <div id="modal3" class="modal">
+    <a href="#" class="modal-close waves-effect waves-green btn-flat">
+      <i class="material-icons cancel">cancel</i>
+    </a>
+    <div class="modal-content">
+     本当にギブアップしますか？
+    </div>
+    <%= link_to 'はい', cooking_path(@menu), class: 'waves-effect waves-light btn main-button back' %>
   </div>
 </div>
 
@@ -49,11 +80,12 @@
     var cooktimer;
     var min = <%= @menu.cooking_time %> + 0;
     var sec = 0;
+    var count = 3;
     function cntStart()
     {
         cooktimer = <%= @menu.cooking_time %>
-        // console.log(cooktimer)
-        cooktimer = setInterval("countDown()",1000);
+            // console.log(cooktimer)
+            cooktimer = setInterval("countDown()",1000);
     }
 
     function countDown()
@@ -84,7 +116,7 @@
         if (int<=0)
         {
             // ここがタイムアップ
-            alert("時間です！");
+            // alert("時間です！");
         }
         else
         {
@@ -98,9 +130,29 @@
         }
     }
 
+    var hintCount = function () {
+        if (count > 0) {
+            count = count - 1;
+            $('#hint').text(count);
+            if (count == 1) {
+                $('#hint2').removeClass('hidden');
+            } else if (count == 0) {
+                $('#hint3').removeClass('hidden');
+            }
+        }
+        $('#detail-button').removeClass('top-btn-under-line');
+        $('#hint-button').addClass('top-btn-under-line');
+    }
+
+    var detailCount = function () {
+        $('#detail-button').addClass('top-btn-under-line');
+        $('#hint-button').removeClass('top-btn-under-line');
+    }
+
     // 画面繊維した時点で始まる
     $(document).ready(function(){
-        cntStart()
+        cntStart();
+        localStorage.removeItem("countTimer");
         $('.modal').modal();
     });
 
