@@ -1,0 +1,108 @@
+<p>TIME</p>
+
+<h1><span id="min"></span>:<span id="sec"></span></h1>
+
+
+<%= image_tag @menu.image_url, size: '348x348' %>
+
+<!--ここはモーダルで表示-->
+<a class="waves-effect waves-light btn modal-trigger main-button" href="#modal1">ヒント</a>
+<a class="waves-effect waves-light btn modal-trigger" href="#modal2">詳細</a>
+<a href="">ギブアップ</a>
+
+<!--モーダル-->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>ヒント1</h4>
+    <p><%= @menu.hint1 %></p>
+    <h4>ヒント2</h4>
+    <p><%= @menu.hint2 %></p>
+    <h4>ヒント3</h4>
+    <p><%= @menu.hint3 %></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <strong>食材:</strong>
+    <ul class="collection">
+      <% @menu.materials.each do |material| %>
+        <li class="collection-item"><%= material.name %><%= material.quantity %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <a href="" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     var elems = document.querySelectorAll('.modal');
+    //     var instances = M.Modal.init(elems, options);
+    // });
+
+    // Or with jQuery
+    var cooktimer;
+    var min = <%= @menu.cooking_time %> + 0;
+    var sec = 0;
+    function cntStart()
+    {
+        cooktimer = <%= @menu.cooking_time %>
+        // console.log(cooktimer)
+        cooktimer = setInterval("countDown()",1000);
+    }
+
+    function countDown()
+    {
+        // console.log(sec)
+        // console.log(min)
+        if (localStorage.getItem("countTimer") == null) {
+            localStorage.setItem("countTimer", 'active');
+        } else {
+            min = $('#min').text();
+            sec = $('#sec').text();
+        }
+
+        if (min=="") min=0;
+        min=parseInt(min);
+
+        if (sec=="") sec=0;
+        sec=parseInt(sec);
+
+        tmWrite(min*60+sec-1);
+    }
+
+    function tmWrite(int)
+    {
+        int=parseInt(int);
+
+        // console.log(int);
+        if (int<=0)
+        {
+            // ここがタイムアップ
+            alert("時間です！");
+        }
+        else
+        {
+            // console.log(int);
+            //残り分数はintを60で割って切り捨てる
+            // document.timer.elements[0].value=Math.floor(int/60);
+            $('#min').text(`${Math.floor(int/60)}`);
+            //残り秒数はintを60で割った余り
+            // document.timer.elements[1].value=int % 60;
+            $('#sec').text(`${int % 60}`);
+        }
+    }
+
+    // 画面繊維した時点で始まる
+    $(document).ready(function(){
+        cntStart()
+        $('.modal').modal();
+    });
+
+
+</script>
