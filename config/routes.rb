@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'menus/:id/success', to: 'menus#success', as: 'success'
   get 'menus/:id/time_up', to: 'menus#time_up', as: 'time_up'
   get 'menus/:id/failure', to: 'menus#failure', as: 'failure'
+  get 'menus/:id/recipe', to: 'menus#recipe', as: 'recipe'
 end

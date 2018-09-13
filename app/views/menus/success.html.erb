@@ -1,5 +1,8 @@
-<h2>おめでとう！</h2>
+<div class="result-content">
+  <h2>おめでとう！</h2>
 
-<%= image_tag 'result/success.png', size: '160x160' %>
+  <%= image_tag 'result/success.png', size: '375x375' %>
 
-<a class="waves-effect waves-light btn modal-trigger" href="#">答え合わせをする</a>
+  <h3>おいしくできましたか？</h3>
+  <%= link_to 'レシピを確認する', recipe_path(@menu), class: 'waves-effect waves-light btn-large main-button' %>
+</div>

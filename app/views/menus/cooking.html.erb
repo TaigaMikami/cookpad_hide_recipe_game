@@ -9,7 +9,7 @@
     <i class="material-icons left">list</i>詳細</a>
   <div class="cooking-image">
     <%= image_tag @menu.image_url, size: '375x375' %>
-    <%= link_to material_preparation_path(@menu), class: 'waves-effect waves-light main-button btn image-btn' do %>
+    <%= link_to success_path(@menu), class: 'waves-effect waves-light main-button btn image-btn' do %>
       <i class="material-icons left">local_dining</i>完成<i class="material-icons right">local_dining</i>
     <% end %>
   </div>
@@ -66,7 +66,7 @@
     <div class="modal-content">
      本当にギブアップしますか？
     </div>
-    <%= link_to 'はい', cooking_path(@menu), class: 'waves-effect waves-light btn main-button back' %>
+    <%= link_to 'はい', failure_path(@menu), class: 'waves-effect waves-light btn main-button back' %>
   </div>
 </div>
 
@@ -117,6 +117,7 @@
         {
             // ここがタイムアップ
             // alert("時間です！");
+            window.location.href = `<%= time_up_path(@menu) %>`;
         }
         else
         {
