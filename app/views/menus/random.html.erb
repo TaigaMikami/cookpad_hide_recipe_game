@@ -3,7 +3,9 @@
 <%= image_tag @menu.image_url, size: '348x348' %>
 
 <!--TODO ボタンのアイコン変える リンク先-->
-<a class="waves-effect waves-light btn main-button"><i class="material-icons left">check</i>この料理に決定</a>
+<%= link_to material_preparation_path(@menu), class: 'waves-effect waves-light btn main-button' do %>
+  <i class="material-icons left">check</i>この料理に決定
+<% end %>
 <a class="waves-effect waves-light btn main-button"><i class="material-icons left">cached</i>別の料理</a>
 
 <h4>
@@ -22,7 +24,7 @@
   <% end %>
 </p>
 
-<strong><strong>調理器具:</strong>
+<strong>食材:</strong>
 <ul class="collection">
   <% @menu.materials.each do |material| %>
     <li class="collection-item"><%= material.name %><%= material.quantity %></li>

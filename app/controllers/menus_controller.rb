@@ -1,8 +1,12 @@
 class MenusController < ApplicationController
-  before_action :set_menu, only: [:show, :edit, :update, :destroy]
+  before_action :set_menu, only: [:show, :edit, :update, :destroy, :material_preperation]
 
   def random
     @menu = Menu.where( 'id >= ?', rand(Menu.count) + 1 ).first
+  end
+
+  def material_preperation
+    
   end
 
   # GET /menus
