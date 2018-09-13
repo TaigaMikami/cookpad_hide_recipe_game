@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @menu.title %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @menu.recipe %>
+</p>
+
+<p>
+  <strong>Cooking time:</strong>
+  <%= @menu.cooking_time %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @menu.image_url %>
+</p>
+
+<p>
+  <strong>Taste:</strong>
+  <%= @menu.taste %>
+</p>
+
+<p>
+  <strong>Hint1:</strong>
+  <%= @menu.hint1 %>
+</p>
+
+<p>
+  <strong>Hint2:</strong>
+  <%= @menu.hint2 %>
+</p>
+
+<p>
+  <strong>Hint3:</strong>
+  <%= @menu.hint3 %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

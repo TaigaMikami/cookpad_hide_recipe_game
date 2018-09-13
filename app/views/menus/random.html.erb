@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @menu.image_url, size: '348x348' %>
+
+<p>
+  <%= @menu.title %>
+</p>
+
+<p>
+  <strong>調理時間:</strong>
+  <%= @menu.cooking_time %>
+</p>
+
+<p>
+  <strong>調理器具:</strong>
+  <% @menu.tools.each do |tool|  %>
+    <%= tool.name %>
+  <% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>
