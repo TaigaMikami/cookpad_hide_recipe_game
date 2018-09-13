@@ -82,12 +82,76 @@ $secondary-color: color("cyan", "base") !default;
 
 // 食材購入促す画面
 .preperation-content {
+  color: #864026 !important;
   background: image-url('back.png');
   background-size: contain;
   background-repeat: repeat;
+  padding: 10px 0 10px 0;
+  .content-name {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .title {
+    margin-bottom: 4px;
+  }
+  .cook-time {
+    text-align: center;
+    margin-top: 0;
+  }
+  .explain {
+    margin-bottom: 20px;
+  }
+  .material-memo {
+    margin: 0 13px;
+    background-color: white;
+    padding-top: 5px;
+    .collection {
+      border: none;
+    }
+    .content-name {
+      font-size: 20px;
+      text-align: left;
+      padding-left: 13px;
+      .person-count {
+        font-size: 13px;
+      }
+    }
+    .collection-item {
+      position: relative;
+      padding: 5px 20px;
+      height: 32px;
+    }
+    .quantity {
+      position: absolute;
+      right: 13px;
+    }
+    .material {
+      position: absolute;
+      left: 40px;
+    }
+  }
+  .material-button-gruop {
+    margin: 13px;
+    .cook-start {
+      width: 349px;
+      margin-bottom: 10px;
+    }
+    .back{
+      width: 349px;
+      background-color: #CBCBCB;
+      color: #606060 !important;
+      font-size: 14px !important;
+    }
+    .left {
+      margin-right: 0;
+    }
+  }
 }
 li {
   input[type="checkbox"] {
+    margin-top: 4px;
     opacity: 1 !important;
+    pointer-events: all !important;
   }
 }

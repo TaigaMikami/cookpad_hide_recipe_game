@@ -1,26 +1,35 @@
 <div class="preperation-content">
-  <h3>準備に</h3>
-  <h3>とりかかったください！</h3>
-  <p>・まずはスーパーで、食材を調達しましょう！
-  <p>・食材をカゴに入れたら「食材メモ」にチェックをつけましょう。</p>
-  <p>・すべての食材を揃えたら、調理を開始しましょう。</p>
+  <h4 class="content-name">料理が決定しました！</h4>
+  <%= image_tag @menu.image_url, size: '375x375' %>
 
-  <h3><%= @menu.title %></h3>
-  <p><%= @menu.cooking_time %>分</p>
+  <h4 class="content-name title"><%= @menu.title %></h4>
+  <p class="cook-time">調理時間 <%= @menu.cooking_time %>分</p>
 
-  <strong>食材:</strong>
+  <%= image_tag 'sa-tuku.png', width: '375', class: 'explain' %>
+  <%= image_tag 'pre-mate1.png', width: '375', class: 'explain'  %>
+  <%= image_tag 'pre-mate2.png', width: '375', class: 'explain'   %>
+  <%= image_tag 'pre-mate3.png', width: '375', class: 'explain'   %>
 
-  <form action="cgi-bin/abc.cgi" method="post">
+  <div class="material-memo">
+    <h5 class="content-name">食材メモ <span class="person-count"><%= @menu.person_count %>人前</span></h5>
+    <hr>
     <ul class="collection">
       <% @menu.materials.each do |material| %>
         <li class="collection-item">
-          <label><input type="checkbox" /> <%= material.name %><%= material.quantity %></label>
+          <input type="checkbox" />
+          <span class="material"><%= material.name %></span>
+          <span class="quantity"><%= material.quantity %></span>
         </li>
       <% end %>
     </ul>
-  </form>
+  </div>
+  <div class="material-button-gruop">
+    <%= link_to cooking_path(@menu), class: 'waves-effect waves-light btn-large main-button cook-start' do %>
+      クッキングスタート
+    <% end %>
 
-  <%= link_to cooking_path(@menu), class: 'waves-effect waves-light btn main-button' do %>
-    <i class="material-icons left">cloud</i>クッキングスタート
-  <% end %>
+    <%= link_to cooking_path(@menu), class: 'waves-effect waves-light btn main-button back' do %>
+      <i class="material-icons left">chevron_left</i>料理選択画面に戻る
+    <% end %>
+  </div>
 </div>
