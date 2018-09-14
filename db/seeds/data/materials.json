@@ -1,26 +1,32 @@
 [
   {
     "name": "小ぶりの鯛",
-    "quantity": "1尾"
+    "quantity": "1尾",
+    "menu_id": 1
   },
   {
     "name": "プチトマト",
-    "quantity": "1パック"
+    "quantity": "1パック",
+    "menu_id": 1
   },
   {
     "name": "あさり",
-    "quantity": "100〜200g"
+    "quantity": "100〜200g",
+    "menu_id": 1
   },
   {
     "name": "にんにく",
-    "quantity": "1片"
+    "quantity": "1片",
+    "menu_id": 1
   },
   {
     "name": "オリーブオイル",
-    "quantity": "大さじ2"
+    "quantity": "大さじ2",
+    "menu_id": 1
   },
   {
     "name": "白ワイン",
-    "quantity": "1/3カップ"
+    "quantity": "1/3カップ",
+    "menu_id": 1
   }
 ]

@@ -1,9 +1,12 @@
 <div class="recipe-content">
   <h2><%= @menu.title %></h2>
   <%= image_tag 'recipe/make.png', width: '375' %>
-  <div class="r-content recipe">
-    <p><%= simple_format(@menu.recipe) %></p>
-  </div>
+  <% @menu.recipes.each_with_index do |recipe, index| %>
+    <div class="r-content recipe">
+      <strong><%= index+1 %>.</strong>
+      <%= simple_format(recipe.content) %>
+    </div>
+  <% end %>
   <%= image_tag 'recipe/umaku.png', width: '375', class: 'umaku'%>
   <div class="r-content">
     <h3>あなた達の料理を</h3>

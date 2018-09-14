@@ -1,21 +1,7 @@
+menus = JSON.parse(File.read(File.join(File.dirname(__FILE__), 'data', 'menus.json')))
 
-menu1 = Menu.create(title: 'アクアパッツァ',
-                    cooking_time: 40,
-                    image_url: 'menus/patu.png',
-                    hint1: 'あさりは砂抜きが必要です！',
-                    hint2: '鯛とプチトマトと白ワインは、蓋をして蒸します！',
-                    hint3: 'あさりは、鯛とプチトマトと白ワインを蒸した後に蒸します！',
-                    recipe: '鯛は洗ってウロコを落とし内臓もだす（ここまでお店でやってくれます）
-あさりは砂抜きして洗っておく。
-パセリも刻んでおく。
-
-鯛が入る平たい鍋かフライパンにオリーブオイルをひき、刻んだにんにくを入れてあたためる。
-
-フライパンに鯛とプチトマトと白ワインを入れ、蓋をして5-6分蒸し焼きにする
-
-あさりを入れて、蓋をして3-4分蒸す。
-
-蓋を開け、弱火にしてスープを鯛にかけながら5分ほど煮て、最後に刻んだパセリをかけて出来上がり。'
-                    )
-
-menu1.tool.create(tool: '')
+menus.each do |menu|
+  menu_titles = Menu.pluck(:title)
+  next if menu_titles.include?(menu['title'])
+  Menu.create(title: menu['title'], image_url: menu['image_url'], cooking_time: menu['cooking_time'], hint1: menu['hint1'], hint2: menu['hint2'], hint3: menu['hint3'], person_count: menu['person_count'])
+end
