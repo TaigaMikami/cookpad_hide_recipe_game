@@ -4,5 +4,8 @@
   <%= image_tag 'result/success.png', size: '375x375' %>
 
   <h3>おいしくできましたか？</h3>
-  <%= link_to 'レシピを確認する', recipe_path(@menu), class: 'waves-effect waves-light btn-large main-button' %>
+  <%= link_to recipe_path(@menu), class: 'waves-effect waves-light btn-large main-button' do %>
+    <i class="material-icons left">search</i>
+    レシピを確認する
+  <% end %>
 </div>

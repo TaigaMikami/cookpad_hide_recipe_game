@@ -1,4 +1,5 @@
 <div class="recipe-content">
+  <%= image_tag 'logo.png', width: '375px', class: 'logo' %>
   <h2><%= @menu.title %></h2>
   <%= image_tag 'recipe/make.png', width: '375' %>
   <% @menu.recipes.each_with_index do |recipe, index| %>
@@ -19,7 +20,10 @@
         <%= image_tag 'recipe/twitter.png', size: '60x60', class: 'twitter-image' %>
       </a>
     </div>
-    <a class="waves-effect waves-light btn main-button" href="/">トップへ</a>
+    <a class="waves-effect waves-light btn main-button" href="/">
+      <i class="material-icons left">local_cafe</i>
+      トップへ
+    </a>
   </div>
 </div>
 

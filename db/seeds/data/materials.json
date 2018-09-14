@@ -28,5 +28,255 @@
     "name": "白ワイン",
     "quantity": "1/3カップ",
     "menu_id": 1
+  },
+  {
+    "name": "ブロックベーコン",
+    "quantity": "100g",
+    "menu_id": 2
+  },
+  {
+    "name": "ズッキーニ",
+    "quantity": "1本",
+    "menu_id": 2
+  },
+  {
+    "name": "ナス",
+    "quantity": "2本",
+    "menu_id": 2
+  },
+  {
+    "name": "黄パプリカ",
+    "quantity": "1個",
+    "menu_id": 2
+  },
+  {
+    "name": "玉ねぎ",
+    "quantity": "1個",
+    "menu_id": 2
+  },
+  {
+    "name": "トマト缶",
+    "quantity": "1個",
+    "menu_id": 2
+  },
+  {
+    "name": "水トマト缶",
+    "quantity": "缶1杯分",
+    "menu_id": 2
+  },
+  {
+    "name": "コンソメキューブ",
+    "quantity": "1個",
+    "menu_id": 2
+  },
+  {
+    "name": "オリーブオイル",
+    "quantity": "大さじ2",
+    "menu_id": 2
+  },
+  {
+    "name": "水",
+    "quantity": "400cc",
+    "menu_id": 3
+  },
+  {
+    "name": "本だし",
+    "quantity": "小さじ1",
+    "menu_id": 3
+  },
+  {
+    "name": "白だし",
+    "quantity": "大さじ2",
+    "menu_id": 3
+  },
+  {
+    "name": "酒",
+    "quantity": "大さじ2",
+    "menu_id": 3
+  },
+  {
+    "name": "塩",
+    "quantity": "小さじ1/2",
+    "menu_id": 3
+  },
+  {
+    "name": "みりん",
+    "quantity": "小さじ2",
+    "menu_id": 3
+  },
+  {
+    "name": "干し椎茸",
+    "quantity": "2枚",
+    "menu_id": 3
+  },
+  {
+    "name": "卵",
+    "quantity": "3個",
+    "menu_id": 3
+  },
+  {
+    "name": "牛バラ肉",
+    "quantity": "200g",
+    "menu_id": 4
+  },
+  {
+    "name": "玉ねぎ",
+    "quantity": "2玉",
+    "menu_id": 4
+  },
+  {
+    "name": "マッシュルーム",
+    "quantity": "6個",
+    "menu_id": 4
+  },
+  {
+    "name": "バター",
+    "quantity": "40g",
+    "menu_id": 4
+  },
+  {
+    "name": "赤ワイン",
+    "quantity": "50ml",
+    "menu_id": 4
+  },
+  {
+    "name": "デミグラスソース",
+    "quantity": "缶1缶",
+    "menu_id": 4
+  },
+  {
+    "name": "生クリーム",
+    "quantity": "100ml",
+    "menu_id": 4
+  },
+  {
+    "name": "ケチャップ",
+    "quantity": "大さじ2",
+    "menu_id": 4
+  },
+  {
+    "name": "中濃ソース",
+    "quantity": "大さじ2",
+    "menu_id": 4
+  },
+  {
+    "name": "コンソメ",
+    "quantity": "小さじ1",
+    "menu_id": 4
+  },
+  {
+    "name": "塩",
+    "quantity": "少々",
+    "menu_id": 4
+  },
+  {
+    "name": "黒こしょう",
+    "quantity": "少々",
+    "menu_id": 4
+  },
+  {
+    "name": "パセリ",
+    "quantity": "適量",
+    "menu_id": 4
+  },
+  {
+    "name": "塩",
+    "quantity": "少々",
+    "menu_id": 5
+  },
+  {
+    "name": "黒こしょう",
+    "quantity": "少々",
+    "menu_id": 5
+  },
+  {
+    "name": "パプリカ",
+    "quantity": "小さじ2",
+    "menu_id": 5
+  },
+  {
+    "name": "オレガノ",
+    "quantity": "小さじ2",
+    "menu_id": 5
+  },
+  {
+    "name": "にんにく",
+    "quantity": "1かけ",
+    "menu_id": 5
+  },
+  {
+    "name": "パセリ",
+    "quantity": "大さじ3",
+    "menu_id": 5
+  },
+  {
+    "name": "にんじん",
+    "quantity": "1/3本",
+    "menu_id": 5
+  },
+  {
+    "name": "いんげん",
+    "quantity": "4~6本",
+    "menu_id": 5
+  },
+  {
+    "name": "ゆで卵",
+    "quantity": "2個",
+    "menu_id": 5
+  },
+  {
+    "name": "じゃがいも",
+    "quantity": "小2個",
+    "menu_id": 6
+  },
+  {
+    "name": "にんじん",
+    "quantity": "1/2本",
+    "menu_id": 6
+  },
+  {
+    "name": "りんご",
+    "quantity": "1/4個",
+    "menu_id": 6
+  },
+  {
+    "name": "ビーツ（缶詰め）",
+    "quantity": "100g",
+    "menu_id": 6
+  },
+  {
+    "name": "玉ねぎ",
+    "quantity": "1/4個",
+    "menu_id": 6
+  },
+  {
+    "name": "きゅうりのピクルス",
+    "quantity": "1/2カップ",
+    "menu_id": 6
+  },
+  {
+    "name": "塩",
+    "quantity": "少々",
+    "menu_id": 6
+  },
+  {
+    "name": "生クリーム",
+    "quantity": "100ml",
+    "menu_id": 6
+  },
+  {
+    "name": "酢",
+    "quantity": "大さじ1",
+    "menu_id": 6
+  },
+  {
+    "name": "砂糖",
+    "quantity": "小さじ1/2",
+    "menu_id": 6
+  },
+  {
+    "name": "かたゆで卵",
+    "quantity": "1個",
+    "menu_id": 6
   }
 ]
