@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_13_085833) do
+ActiveRecord::Schema.define(version: 2018_09_14_014937) do
 
   create_table "materials", force: :cascade do |t|
     t.string "name"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 2018_09_13_085833) do
 
   create_table "menus", force: :cascade do |t|
     t.string "title"
-    t.text "recipe"
     t.integer "cooking_time"
     t.string "image_url"
     t.text "taste"
@@ -42,6 +41,14 @@ ActiveRecord::Schema.define(version: 2018_09_13_085833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "person_count"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.text "content"
+    t.integer "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_recipes_on_menu_id"
   end
 
   create_table "tools", force: :cascade do |t|

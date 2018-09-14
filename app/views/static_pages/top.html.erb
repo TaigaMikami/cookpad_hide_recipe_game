@@ -1,3 +1,7 @@
-<h1>StaticPages#top</h1>
-<p>Find me in app/views/static_pages/top.html.erb</p>
-<%= link_to 'ランダム', random_path %>
+<div class="top-content">
+  <%= image_tag 'logo.png', width: '375px', class: 'logo' %>
+  <%= image_tag 'chara.png', width: '375px', class: 'logo' %>
+  <%= image_tag 'explain.png', width: '375px', class: 'logo' %>
+  <a class="waves-effect waves-light btn-large main-button top-btn" href="/random">
+    <i class="material-icons left">local_dining</i>料理をはじめる</a>
+</div>

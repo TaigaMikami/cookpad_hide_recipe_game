@@ -10,6 +10,29 @@ $secondary-color: color("cyan", "base") !default;
   background-color: #ff5252;
 }
 
+// top
+.top-content {
+  background: image-url('back.png');
+  background-size: contain;
+  background-repeat: repeat;
+  padding: 40px 0;
+  padding-bottom: 90px;
+
+  .logo {
+    margin-top: 10px;
+  }
+  .top-btn {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-size: 20px;
+    width: 349px;
+  }
+  .left {
+    margin-right: 0;
+  }
+
+}
+
 
 //食品選択ページ
 .food-select-content {
@@ -192,6 +215,7 @@ li {
     position: absolute;
     left: 8px;
     bottom: 11px;
+    font-size: 20px;
   }
   .modal {
     color: white;
@@ -246,6 +270,9 @@ li {
     width: 350px;
     font-size: 20px;
   }
+  .left {
+    margin-right: 0;
+  }
 }
 
 .recipe-content {
@@ -261,6 +288,16 @@ li {
   }
   .recipe {
     text-align: left;
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    p {
+      margin: 3px;
+    }
+    strong {
+      font-size: 18px;
+    }
   }
 
   p {
@@ -292,6 +329,12 @@ li {
   .twitter-image {
     margin-top: 25px;
     margin-bottom: 20px;
+  }
+  .left {
+    margin-right: 0;
+  }
+  .t-content {
+    margin-top: 20px;
   }
 }
 
